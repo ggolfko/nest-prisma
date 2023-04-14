@@ -1,0 +1,1 @@
+import './seeds/user.seed'

@@ -1,4 +1,9 @@
-import { INestApplication, Injectable, OnModuleInit } from '@nestjs/common';
+import {
+  INestApplication,
+  Injectable,
+  Logger,
+  OnModuleInit,
+} from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 
 @Injectable()
@@ -6,9 +11,12 @@ export class PrismaService extends PrismaClient implements OnModuleInit {
   async onModuleInit() {
     try {
       await this.$connect();
-      console.log('Prisma client is connected to the database!');
+      Logger.log(`🌨️ Prisma client is connected to the database!`);
     } catch (error) {
-      console.error('Prisma client failed to connect to the database:', error);
+      Logger.error(
+        `❌ Prisma client failed to connect to the database:`,
+        error,
+      );
     }
   }
 

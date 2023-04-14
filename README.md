@@ -76,7 +76,16 @@ Nest is [MIT licensed](LICENSE).
 
 ```bash
 
-# To map your data model to the database schema
+# Generate Prisma Client with the following command
+$ npx prisma generate
+
+# To map your data model to the database schema.
 $ npx prisma migrate dev --name init
+
+# To seed the database.
+$ npx prisma db seed --preview-feature
+
+# Prisma comes with a built-in GUI to view and edit the data in your database.
+$ npx prisma studio
 
 ```
