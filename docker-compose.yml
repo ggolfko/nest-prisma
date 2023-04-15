@@ -1,0 +1,24 @@
+version: "3.9"
+
+networks:
+  database_network:
+    name: mysqldb_default
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_URL: "mysql://USER:PASSWORD@HOST:PORT/DATABASE"
+      JWT_SECRET: "jtwsecretkey"
+    volumes:
+      # - .:/app
+      - /app/node_modules
+    ports:
+      - 3000:3000
+    networks:
+      - database_network

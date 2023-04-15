@@ -82,6 +82,9 @@ $ npx prisma generate
 # To map your data model to the database schema.
 $ npx prisma migrate dev --name init
 
+# To apply pending migrations to staging, testing, or production environments, run the migrate deploy command as part of your CI/CD pipeline
+$ npx prisma migrate deploy
+
 # To seed the database.
 $ npx prisma db seed --preview-feature
 
