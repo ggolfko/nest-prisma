@@ -14,7 +14,14 @@ services:
       NODE_ENV: production
       PORT: 3000
       DATABASE_URL: "mysql://USER:PASSWORD@HOST:PORT/DATABASE"
-      JWT_SECRET: "jtwsecretkey"
+      JWT_SECRET: "secretKey"
+      MAILER_HOST: smtp.gmail.com
+      MAILER_PORT: 465
+      MAILER_SECURE: true
+      MAILER_DEBUG: true
+      MAILER_USER: noreply@email.com
+      MAILER_PASS: secretPassword
+      MAILER_FORM: "noreply <noreply@email.com>"
     volumes:
       # - .:/app
       - /app/node_modules
